@@ -1,0 +1,40 @@
+﻿@model app2.Models.RespostaConvidados
+
+@{
+    ViewData["Title"] = "Formulario";
+}
+
+<h2>Formulario</h2>
+<hr />
+
+<div>
+    <form asp-action="Formulario" method="post">
+        <div>
+            <label asp-for="Nome">O seu nome:</label>
+            <input asp-for="Nome"/>
+        </div>
+
+        <div>
+            <label asp-for="Email">O seu e-mail:</label>
+            <input asp-for="Email"/>
+        </div>
+
+        <div>
+            <label asp-for="Telefone">O seu telefone:</label>
+            <input asp-for="Telefone"/>
+        </div>
+
+        <div>
+            <label>Vou estar presente?</label>
+            <select asp-for="Presente">
+                <option value="">Escolha uma opção</option>
+                <option value="true">Sim</option>
+                <option value="false">Não</option>
+            </select>
+        </div>
+
+        <div>
+            <button type="submit">Enviar</button>
+        </div>
+    </form>
+</div>
