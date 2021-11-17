@@ -1,0 +1,27 @@
+﻿@model IEnumerable<app2.Models.RespostaConvidados>
+
+@{
+    ViewData["Title"] = "ListaFinal";
+}
+
+<h2>Lista Final</h2>
+<hr />
+<table>
+    <thead>
+        <tr>
+            <th>Nome</th>
+            <th>Email</th>
+            <th>Telefone</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(RespostaConvidados item in Model)
+        {
+            <tr>
+                <td>@item.Nome</td>
+                <td>@item.Email</td>
+                <td>@item.Telefone</td>
+            </tr>
+        }
+    </tbody>
+</table>

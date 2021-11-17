@@ -18,9 +18,22 @@ namespace app2.Controllers
             return View("inicio");
         }
 
+        [HttpGet]
         public ViewResult Formulario()
         {
             return View("Formulario");
+        }
+
+        [HttpPost]
+        public ViewResult Formulario(RespostaConvidados resposta)
+        {
+            Repositorio.AdicionarResposta(resposta);
+            return View("obrigado", resposta);
+        }
+
+        public ViewResult ListaConvidados()
+        {
+            return View("ListaFinal", Repositorio.ListaFinal.Where(c => c.Presente == true));
         }
     }
 }
